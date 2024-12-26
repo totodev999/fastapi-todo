@@ -56,6 +56,11 @@ LOGGING_CONFIG = {
             "handlers": ["console"],
             "propagate": True,
         },
+        "sqlalchemy.engine.Engine": {
+            "level": "INFO",
+            "handlers": ["console"],
+            "propagate": False,
+        },
         "uvicorn": {
             "level": "INFO",
             "handlers": ["console"],

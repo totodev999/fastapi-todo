@@ -10,14 +10,22 @@ class Status(str, Enum):
     hold = "hold"
 
 
-class GetTodo(BaseModel):
-    id: UUID
+class BaseTodo(BaseModel):
     title: str
     content: str
     status: Status
+
+
+class Todo(BaseTodo):
+    id: UUID
     created_at: str
     updated_at: str
 
 
-class GetTodos(BaseModel):
-    todos: list[GetTodo]
+class Todos(BaseModel):
+    todos: list[Todo]
+
+
+class PostTodoRequest(BaseModel):
+    title: str
+    content: str

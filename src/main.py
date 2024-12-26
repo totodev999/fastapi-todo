@@ -32,5 +32,10 @@ async def exception_handler(request: Request, exc: Exception):
 
 app.include_router(todos_router)
 
-if __name__ == "__main__":
+
+def main():
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True, access_log=False)
+
+
+if __name__ == "__main__":
+    main()

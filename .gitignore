@@ -164,7 +164,7 @@ cython_debug/
 fastapi-todo-env
 .DS_Store
 
-alembic/versions
+src/alembic/versions
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
