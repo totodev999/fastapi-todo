@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
 import uuid
 
 from utils.custom_formatter import request_id_var, method_var, url_var, get_app_logger
@@ -19,6 +20,14 @@ async def logging_middleware(request: Request, call_next):
     response = await call_next(request)
     logger.info("access end")
     return response
+
+
+@app.exception_handler(Exception)
+async def exception_handler(request: Request, exc: Exception):
+    logger.error(f"error occurred: {str(exc)}")
+    return JSONResponse(
+        status_code=500, content={"message": "Sorry something went wrong!"}
+    )
 
 
 app.include_router(todos_router)
