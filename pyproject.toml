@@ -90,6 +90,9 @@ xattr = "1.1.0"
 
 [tool.poetry.scripts]
 start = "main:main"
+db_revision = "alembic_cli:alembic_revision"
+db_migrate = "alembic_cli:alembic_migrate"
+
 
 [build-system]
 requires = ["poetry-core"]

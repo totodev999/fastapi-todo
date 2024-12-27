@@ -88,3 +88,6 @@ LOGGING_CONFIG = {
 def get_app_logger():
     logging.config.dictConfig(LOGGING_CONFIG)
     return logging.getLogger("app_logger")
+
+
+app_logger = get_app_logger()
